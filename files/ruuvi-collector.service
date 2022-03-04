@@ -1,0 +1,15 @@
+[Unit]
+Description=Ruuvi Collector service
+
+[Service]
+User=pi
+WorkingDirectory=/etc/ruuvi-collector/
+ExecStart=/usr/bin/java -jar ruuvi-collector-0.2.jar
+SuccessExitStatus=143
+TimeoutStopSec=10
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
