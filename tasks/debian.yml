@@ -1,5 +1,14 @@
 ---
 
+- name: install prerequisites for ruuvi-collector
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - openjdk-17-jre-headless
+    - bluez
+    - bluez-hcidump
+  notify: add bluetooth capabilities for hcitool and hcidump
+
 - name: create directory for ruuvi-collector
   file:
     path: /etc/ruuvi-collector
@@ -41,15 +50,6 @@
     owner: root
     group: root
     mode: '0644'
-
-- name: install prerequisites for ruuvi-collector
-  apt:
-    name: "{{ item }}"
-  with_items:
-    - openjdk-17-jre-headless
-    - bluez
-    - bluez-hcidump
-  notify: add bluetooth capabilities for hcitool and hcidump
 
 - name: flush handlers
   meta: flush_handlers
