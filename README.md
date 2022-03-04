@@ -25,7 +25,7 @@ roles_path = roles
 
 requirements.yml
 ```
-nnn
+- src: https://github.com/hulkk/ruuvicollector-ansible
 ```
 
 `ansible-galaxy install -r requirements.yml --force`
