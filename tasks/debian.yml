@@ -1,0 +1,62 @@
+---
+
+- name: create directory for ruuvi-collector
+  file:
+    path: /etc/ruuvi-collector
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: download ruuvi-collector
+  get_url:
+    url: "https://github.com/Scrin/RuuviCollector/releases/download/{{ ruuvi_collector_version }}/{{ item }}"
+    dest: "/etc/ruuvi-collector/ruuvi-collector.jar"
+  with_items:
+    - "{{ ruuvi_collector_release_filename }}"
+  ignore_errors: "{{ ansible_check_mode }}"
+
+- name: generate ruuvi-collector config
+  template:
+    src: ruuvi-collector.properties.j2
+    dest: /etc/ruuvi-collector/ruuvi-collector.properties
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart ruuvi-collector
+
+- name: generate ruuvi-names config
+  template:
+    src: ruuvi-names.properties.j2
+    dest: /etc/ruuvi-collector/ruuvi-names.properties
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart ruuvi-collector
+
+- name: copy service information for ruuvi-collector
+  copy:
+    src: ruuvi-collector.service
+    dest: /etc/systemd/system/ruuvi-collector.service
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: install prerequisites for ruuvi-collector
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - openjdk-17-jre-headless
+    - bluez
+    - bluez-hcidump
+  notify: add bluetooth capabilities for hcitool and hcidump
+
+- name: flush handlers
+  meta: flush_handlers
+
+- name: start ruuvi-collector
+  service:
+    name: ruuvi-collector
+    enabled: yes
+    state: started
+
