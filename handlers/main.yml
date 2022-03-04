@@ -4,6 +4,7 @@
   systemd:
     name: ruuvi-collector
     state: restarted
+  ignore_errors: "{{ ansible_check_mode }}"
 
 - name: add bluetooth capabilities for hcitool and hcidump
   capabilities:
