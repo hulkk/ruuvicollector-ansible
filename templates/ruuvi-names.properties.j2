@@ -6,5 +6,5 @@
 # Examples:
 # D04AB59C588B=Indoors
 # D944923E0B70=Terrace
-{% for alias in ruuvi_aliases %}{{ alias }}
-{% endfor %}
+{% if ruuvicollector_ruuvi_names is defined %}{% for name in ruuvicollector_ruuvi_names %}{{ name }}
+{% endfor %}{% endif %}
