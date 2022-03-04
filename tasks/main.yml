@@ -2,7 +2,9 @@
 
 - name: include ruuvicollector tasks for debian
   include_tasks: debian.yml
-  become: yes
+  args:
+    apply:
+      become: yes
   when:
     - ansible_distribution == 'Debian'
 
