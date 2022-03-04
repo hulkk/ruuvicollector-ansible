@@ -1,11 +1,5 @@
 ---
 
-- name: restart ruuvi-collector
-  systemd:
-    name: ruuvi-collector
-    state: restarted
-  ignore_errors: "{{ ansible_check_mode }}"
-
 - name: add bluetooth capabilities for hcitool and hcidump
   capabilities:
     path: "{{ item }}"
@@ -15,4 +9,10 @@
   with_items:
     - "/usr/bin/hcitool"
     - "/usr/bin/hcidump"
+
+- name: restart ruuvi-collector
+  systemd:
+    name: ruuvi-collector
+    state: restarted
+  ignore_errors: "{{ ansible_check_mode }}"
 
