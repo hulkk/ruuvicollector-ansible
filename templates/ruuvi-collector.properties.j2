@@ -62,13 +62,17 @@ measurementUpdateLimit={{ ruuvicollector_measurement_interval }}
 #             Ignores the storage.values.list property. NOTE: the influxdb_legacy storage method does not support extended values
 # whitelist = Only the values given in the storage.values.list property are stored. (influxdb_legacy storage method not supported.)
 # blacklist = Only the values not given in the storage.values.list property are stored. (influxdb_legacy storage method not supported.)
-#storage.values=extended
+{% if ruuvicollector_measurement_list is defined %}
+storage.values=whitelist
+{% endif %}
 
 # See MEASUREMENTS.md for all the field names that can be used with storage.values.list.
 # Note that leaving this list empty while setting storage.values=whitelist results in an exception: no sensor data
 # would be stored with this combination. Setting storage.values=blacklist and leaving this list empty only results
 # in a warning, as that is essentially just the same as setting storage.values=extended -- nothing is banned.
-#storage.values.list =
+{% if ruuvicollector_measurement_list is defined %}{% set comma = joiner(",") %}
+storage.values.list="{% for measurement in ruuvicollector_measurement_list %}{{ comma() }}{{ measurement }}{% endfor %}"
+{% endif %}
 
 #
 # Advanced configuration - Change these only if you know what you are doing
