@@ -29,6 +29,9 @@ None
 * `ruuvicollector_ruuvi_names` (list, default null)
     * maps ruuvitag mac addresses to human readable names
     * e.g. `D944923E0B70=Terrace`
+* `ruuvicollector_measurement_list` (list, default null)
+    * list of measurement field names to collect, by default all measurements are collected
+    * https://github.com/Scrin/RuuviCollector/blob/master/MEASUREMENTS.md
 
 ## Example usage
 
