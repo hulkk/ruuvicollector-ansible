@@ -12,8 +12,10 @@ influxDatabase={{ ruuvicollector_influx_database }}
 influxMeasurement={{ ruuvicollector_influx_measurement }}
 
 # Username and password to use in influxdb. These can be ignored if you don't use authentication in InfluxDB.
-#influxUser={{ ruuvicollector_influx_username }}
-#influxPassword={{ ruuvicollector_influx_password }}
+{% if ruuvicollector_influx_password is defined %}
+influxUser={{ ruuvicollector_influx_username }}
+influxPassword={{ ruuvicollector_influx_password }}
+{% endif %}
 
 # Minimum interval in milliseconds for measurements per measurement type per tag.
 # This is to avoid saving too many measurements especially with the default firmware which sends measurements every 0.5 seconds

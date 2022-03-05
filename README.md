@@ -21,6 +21,7 @@ None
 * `ruuvicollector_influx_database` (string, default "ruuvi")
 * `ruuvicollector_influx_measurement` (string, default "ruuvi_measurements")
 * `ruuvicollector_influx_username` (string, default "ruuvi")
+* `ruuvicollector_influx_password` (string, default null)
 * `ruuvicollector_influx_retentionpolicy` (string, default "autogen")
 * `ruuvicollector_influx_batch_mode` (boolean, default true)
 * `ruuvicollector_measurement_interval` (int, default 9900)
