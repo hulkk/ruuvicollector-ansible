@@ -19,10 +19,8 @@
 
 - name: download ruuvi-collector
   get_url:
-    url: "https://github.com/Scrin/RuuviCollector/releases/download/{{ ruuvicollector_version }}/{{ item }}"
+    url: "https://github.com/Scrin/RuuviCollector/releases/download/{{ ruuvicollector_version }}/{{ ruuvicollector_release_filename }}"
     dest: "/etc/ruuvi-collector/ruuvi-collector.jar"
-  with_items:
-    - "{{ ruuvicollector_release_filename }}"
   ignore_errors: "{{ ansible_check_mode }}"
 
 - name: generate ruuvi-collector config
