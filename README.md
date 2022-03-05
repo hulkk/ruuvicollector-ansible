@@ -15,16 +15,17 @@ None
 
 ### Optional
 
-* ruuvicollector_version (string, default "v0.2.7")
-* ruuvicollector_release_filename (string, default "ruuvi-collector-0.2.jar")
-* ruuvicollector_influx_instance (string, default http://localhost:8086")
-* ruuvicollector_influx_database (string, default "ruuvi")
-* ruuvicollector_influx_measurement (string, default "ruuvi_measurements")
-* ruuvicollector_influx_username (string, default "ruuvi")
-* ruuvicollector_influx_retentionpolicy (string, default "autogen")
-* ruuvicollector_influx_batch_mode (boolean, default true)
-* ruuvicollector_measurement_interval (int, default 9900)
-* ruuvicollector_measurement_strategy (string, default "default")
+* `ruuvicollector_version` (string, default "v0.2.7")
+* `ruuvicollector_release_filename` (string, default "ruuvi-collector-0.2.jar")
+* `ruuvicollector_influx_instance` (string, default http://localhost:8086")
+* `ruuvicollector_influx_database` (string, default "ruuvi")
+* `ruuvicollector_influx_measurement` (string, default "ruuvi_measurements")
+* `ruuvicollector_influx_username` (string, default "ruuvi")
+* `ruuvicollector_influx_retentionpolicy` (string, default "autogen")
+* `ruuvicollector_influx_batch_mode` (boolean, default true)
+* `ruuvicollector_measurement_interval` (int, default 9900)
+* `ruuvicollector_measurement_strategy` (string, default "default")
+* `ruuvicollector_ruuvi_names` (list, default null)
 
 ## Example usage
 
