@@ -1,21 +1,33 @@
-Role Name
+# ruuvicollector-ansible
 =========
 
-A brief description of the role goes here.
+Ansible role to install and configure https://github.com/Scrin/RuuviCollector
 
-Requirements
-------------
+## Created for personal use and tested with 
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+* RaspberryPi OS Lite (32-bit)
+* RaspberryPi ZeroW 2
 
-Role Variables
---------------
+## Role Variables
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+### Mandatory
 
+None
 
-Example usage
-----------------
+### Optional
+
+* ruuvicollector_version (string, default "v0.2.7")
+* ruuvicollector_release_filename (string, default "ruuvi-collector-0.2.jar")
+* ruuvicollector_influx_instance (string, default http://localhost:8086")
+* ruuvicollector_influx_database (string, default "ruuvi")
+* ruuvicollector_influx_measurement (string, default "ruuvi_measurements")
+* ruuvicollector_influx_username (string, default "ruuvi")
+* ruuvicollector_influx_retentionpolicy (string, default "autogen")
+* ruuvicollector_influx_batch_mode (boolean, default true)
+* ruuvicollector_measurement_interval (int, default 9900)
+* ruuvicollector_measurement_strategy (string, default "default")
+
+## Example usage
 
 ansible.cfg
 ```
