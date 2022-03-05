@@ -7,7 +7,6 @@ ruuvicollector_influx_instance: "http://localhost:8086"
 ruuvicollector_influx_database: "ruuvi"
 ruuvicollector_influx_measurement: "ruuvi_measurements"
 ruuvicollector_influx_username: "ruuvi"
-ruuvicollector_influx_password: "ruuvi"
 ruuvicollector_influx_retentionpolicy: "autogen"
 ruuvicollector_influx_batch_mode: true
 
