@@ -71,7 +71,7 @@ storage.values=whitelist
 # would be stored with this combination. Setting storage.values=blacklist and leaving this list empty only results
 # in a warning, as that is essentially just the same as setting storage.values=extended -- nothing is banned.
 {% if ruuvicollector_measurement_list is defined %}{% set comma = joiner(",") %}
-storage.values.list="{% for measurement in ruuvicollector_measurement_list %}{{ comma() }}{{ measurement }}{% endfor %}"
+storage.values.list={% for measurement in ruuvicollector_measurement_list %}{{ comma() }}{{ measurement }}{% endfor %}
 {% endif %}
 
 #
