@@ -14,5 +14,6 @@
   systemd:
     name: ruuvi-collector
     state: restarted
+    daemon_reload: yes
   ignore_errors: "{{ ansible_check_mode }}"
 

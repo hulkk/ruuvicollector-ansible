@@ -41,13 +41,14 @@
     mode: '0644'
   notify: restart ruuvi-collector
 
-- name: copy service information for ruuvi-collector
+- name: service information for ruuvi-collector
   copy:
     src: ruuvi-collector.service
     dest: /etc/systemd/system/ruuvi-collector.service
     owner: root
     group: root
     mode: '0644'
+  notify: restart ruuvi-collector
 
 - name: flush handlers
   meta: flush_handlers
