@@ -3,7 +3,7 @@
 - name: add bluetooth capabilities for hcitool and hcidump
   capabilities:
     path: "{{ item }}"
-    capability: "cap_net_raw,cap_net_admin+eip"
+    capability: "cap_net_raw,cap_sys_rawio,cap_net_admin+eip"
     state: present
   become: yes
   ignore_errors: "{{ ansible_check_mode }}"
