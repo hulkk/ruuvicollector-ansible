@@ -5,6 +5,7 @@ After=bluetooth.service
 [Service]
 User=pi
 WorkingDirectory=/etc/ruuvi-collector/
+ExecStartPre=/bin/sleep 10
 ExecStart=/usr/bin/java -jar ruuvi-collector.jar
 SuccessExitStatus=0
 TimeoutStopSec=10
