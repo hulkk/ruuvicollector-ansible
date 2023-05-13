@@ -1,6 +1,6 @@
 ---
 
-ruuvicollector_version: "v0.2.7"
+ruuvicollector_version: "v0.2.8"
 ruuvicollector_release_filename: "ruuvi-collector-0.2.jar"
 
 ruuvicollector_influx_instance: "http://localhost:8086"
