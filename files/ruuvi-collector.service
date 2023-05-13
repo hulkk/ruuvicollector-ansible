@@ -1,11 +1,12 @@
 [Unit]
 Description=Ruuvi Collector service
+After=bluetooth.service
 
 [Service]
 User=pi
 WorkingDirectory=/etc/ruuvi-collector/
 ExecStart=/usr/bin/java -jar ruuvi-collector.jar
-SuccessExitStatus=143
+SuccessExitStatus=0
 TimeoutStopSec=10
 Restart=on-failure
 RestartSec=5
