@@ -1,8 +1,10 @@
 ---
 profile: production
 
-skip_list:
-  - skip_me
+#skip_list:
+#  - skip_me
 
 warn_list:
   - role-name
+  - fqcn[action-core]
+  - name[casing] 
