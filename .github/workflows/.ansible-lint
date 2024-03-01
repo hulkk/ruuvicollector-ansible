@@ -1,0 +1,8 @@
+---
+profile: production
+
+skip_list:
+  - skip_me
+
+warn_list:
+  - role-name
