@@ -12,4 +12,3 @@ ruuvicollector_influx_batch_mode: true
 
 ruuvicollector_measurement_interval: 9900
 ruuvicollector_measurement_strategy: "default"
-

@@ -2,7 +2,7 @@
 profile: production
 
 skip_list:
-  - name[casing] 
+  - name[casing]
   - fqcn[action-core]
 
 warn_list:
