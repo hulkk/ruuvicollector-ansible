@@ -5,7 +5,7 @@
     path: "{{ item }}"
     capability: "cap_net_raw,cap_net_admin+eip"
     state: present
-  become: yes
+  become: true
   ignore_errors: "{{ ansible_check_mode }}"
   with_items:
     - "/usr/bin/hcitool"
@@ -15,7 +15,6 @@
   systemd:
     name: ruuvi-collector
     state: restarted
-    daemon_reload: yes
-  become: yes
+    daemon_reload: true
+  become: true
   ignore_errors: "{{ ansible_check_mode }}"
-
