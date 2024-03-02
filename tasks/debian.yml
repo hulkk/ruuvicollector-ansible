@@ -56,7 +56,6 @@
 - name: start ruuvi-collector
   service:
     name: ruuvi-collector
-    enabled: yes
+    enabled: true
     state: started
   ignore_errors: "{{ ansible_check_mode }}"
-
